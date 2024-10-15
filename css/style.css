@@ -20,19 +20,44 @@ body {
 }
 .card {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 10%;
+  width: 7%;
   aspect-ratio: 1/1.5;
   border: 3px solid black;
-  font-size: 64px;
+  font-size: 45px;
   text-align: center;
   background-color: #40e0d0;
   caret-color: transparent;
   margin: 0px 2px 0px 2px;
+  cursor: pointer;
+}
+.smallLetter {
+  width: 7%;
+  aspect-ratio: 1/1.5;
+  font-size: 20px;
+  text-align: center;
+  caret-color: transparent;
+  margin: 5px 2px 0px 2px;
+  cursor: pointer;
+  font-weight: bolder;
+}
+.cardImage {
+  width: 80%;
+  height: auto;
+  aspect-ratio: 1/1.5;
+  /*border: 3px solid black;
+  font-size: 64px;
+  text-align: center;*/
+  background-color: #ffffff;
+  caret-color: transparent;
+  margin: 0px 2px 0px 2px;
+  cursor: pointer;
 }
 #start,
-#reset {
+#reset,
+#next {
   background-color: #ffc300; /* Green */
   border: none;
   color: black;
@@ -45,10 +70,25 @@ body {
   transition-duration: 0.4s;
   cursor: pointer;
 }
-#start:hover {
+#start:hover,
+#reset:hover,
+#next:hover {
   background-color: #900c3f;
   color: white;
 }
-#reset {
+#reset,
+#next {
   display: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 0;
+}
+#matchMessage {
+  height: 10px;
+  vertical-align: top;
+  margin-bottom: 30px;
 }

@@ -3,8 +3,12 @@
 const container = document.querySelector('#container')
 const message = document.querySelector('#message')
 const matchMessage = document.querySelector('#matchMessage')
+const levelMessage = document.querySelector('#levelMessage')
 const startBtn = document.querySelector('#start')
 const resetBtn = document.querySelector('#reset')
+const nextBtn = document.querySelector('#next')
+const gameMode = document.querySelector('#gameMode')
+const modeLabel = document.querySelector('#modeLabel')
 const fullArabicAlphabit = [
   {
     letter: 'أ',
@@ -101,6 +105,136 @@ const fullArabicAlphabit = [
     letterName: 'دال',
     imageUrl:
       'https://png.pngtree.com/png-vector/20200417/ourmid/pngtree-cute-chicken-cartoon-illustration-png-image_2184671.jpg'
+  },
+  {
+    letter: 'ذ',
+    letterName: 'ذال',
+    imageUrl:
+      'https://png.pngtree.com/png-clipart/20230125/original/pngtree-vector-clip-art-of-fly-png-image_8930063.png'
+  },
+  {
+    letter: 'ذ',
+    letterName: 'ذال',
+    imageUrl:
+      'https://png.pngtree.com/png-clipart/20230125/original/pngtree-vector-clip-art-of-fly-png-image_8930063.png'
+  },
+  {
+    letter: 'ر',
+    letterName: 'راء',
+    imageUrl:
+      'https://e7.pngegg.com/pngimages/619/720/png-clipart-pomegranate-pomegranate-natural-foods-frutti-di-bosco.png'
+  },
+  {
+    letter: 'ر',
+    letterName: 'راء',
+    imageUrl:
+      'https://e7.pngegg.com/pngimages/619/720/png-clipart-pomegranate-pomegranate-natural-foods-frutti-di-bosco.png'
+  },
+  {
+    letter: 'ز',
+    letterName: 'زاي',
+    imageUrl:
+      'https://img.freepik.com/free-vector/floral-background-design_1262-2549.jpg?semt=ais_hybrid'
+  },
+  {
+    letter: 'ز',
+    letterName: 'زاي',
+    imageUrl:
+      'https://img.freepik.com/free-vector/floral-background-design_1262-2549.jpg?semt=ais_hybrid'
+  },
+  {
+    letter: 'س',
+    letterName: 'سين',
+    imageUrl:
+      'https://img.freepik.com/free-vector/cute-fish-sea-animal-cartoon-sticker_1308-61457.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1728000000&semt=ais_hybrid'
+  },
+  {
+    letter: 'س',
+    letterName: 'سين',
+    imageUrl:
+      'https://img.freepik.com/free-vector/cute-fish-sea-animal-cartoon-sticker_1308-61457.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1728000000&semt=ais_hybrid'
+  },
+  {
+    letter: 'ش',
+    letterName: 'شين',
+    imageUrl: 'https://e7.pngegg.com/pngimages/195/1020/png-clipart-sun-sun.png'
+  },
+  {
+    letter: 'ش',
+    letterName: 'شين',
+    imageUrl: 'https://e7.pngegg.com/pngimages/195/1020/png-clipart-sun-sun.png'
+  },
+  {
+    letter: 'ص',
+    letterName: 'صاد',
+    imageUrl:
+      'https://img.freepik.com/premium-vector/drawing-cactus-with-white-background-with-drawing-cactus-it_1310786-1199.jpg'
+  },
+  {
+    letter: 'ص',
+    letterName: 'صاد',
+    imageUrl:
+      'https://img.freepik.com/premium-vector/drawing-cactus-with-white-background-with-drawing-cactus-it_1310786-1199.jpg'
+  },
+  {
+    letter: 'ض',
+    letterName: 'ضاد',
+    imageUrl:
+      'https://img.freepik.com/free-vector/green-frog-white-background_1308-110146.jpg'
+  },
+  {
+    letter: 'ض',
+    letterName: 'ضاد',
+    imageUrl:
+      'https://img.freepik.com/free-vector/green-frog-white-background_1308-110146.jpg'
+  },
+  {
+    letter: 'ط',
+    letterName: 'طاء',
+    imageUrl:
+      'https://img.lovepik.com/free-png/20220109/lovepik-drum-png-image_401360512_wh860.png'
+  },
+  {
+    letter: 'ط',
+    letterName: 'طاء',
+    imageUrl:
+      'https://img.lovepik.com/free-png/20220109/lovepik-drum-png-image_401360512_wh860.png'
+  },
+  {
+    letter: 'ظ',
+    letterName: 'ظاء',
+    imageUrl:
+      'https://img.freepik.com/premium-vector/envelopes-clipart-vector-art-illustration_761413-28790.jpg'
+  },
+  {
+    letter: 'ظ',
+    letterName: 'ظاء',
+    imageUrl:
+      'https://img.freepik.com/premium-vector/envelopes-clipart-vector-art-illustration_761413-28790.jpg'
+  },
+  {
+    letter: 'ع',
+    letterName: 'عين',
+    imageUrl:
+      'https://img.lovepik.com/free-png/20210928/lovepik-hand-drawn-eyes-png-image_401673829_wh1200.png'
+  },
+  {
+    letter: 'ع',
+    letterName: 'عين',
+    imageUrl:
+      'https://img.lovepik.com/free-png/20210928/lovepik-hand-drawn-eyes-png-image_401673829_wh1200.png'
+  },
+  {
+    letter: 'غ',
+    letterName: 'غين',
+    imageUrl:
+      'https://img.lovepik.com/png/20231111/crow-clipart-black-crow-is-standing-in-water-on-a_556617_wh860.png'
+  },
+  {
+    letter: 'غ',
+    letterName: 'غين',
+    imageUrl:
+      'https://img.lovepik.com/png/20231111/crow-clipart-black-crow-is-standing-in-water-on-a_556617_wh860.png'
   }
 ]
 
@@ -109,15 +243,25 @@ const fullArabicAlphabit = [
 let cardsText = []
 let firstCardClicked
 let gameLetters = []
-let level = 2
+let gameImages = []
+let level = parseInt(sessionStorage.getItem('level'), 10)
+if (!level) level = 1
 let numberOfCards = 0
 let cards = []
 let arabicAlphabit = []
+let noClick = false
+let numberOfMatches = 0
+let mode = sessionStorage.getItem('mode')
+if (!mode) mode = 1
+console.log('+++++++++++++++', mode)
+
 //let secondCardValue
 /*------------------------ Cached Element References ------------------------*/
 
 /*-------------------------------- Functions --------------------------------*/
 const checkLevel = () => {
+  //console.log(level)
+
   switch (level) {
     case 1:
       numberOfCards = 4
@@ -142,9 +286,10 @@ const checkLevel = () => {
       numberOfCards = 28
       break
   }
+  levelMessage.innerHTML = 'Level: ' + level
+  arabicAlphabit = []
   arabicAlphabit = fullArabicAlphabit.slice(0, numberOfCards)
   //console.log('===================>>>', fullArabicAlphabit)
-  //console.log('===================>>>', arabicAlphabit)
 }
 /*
 Shuffling function using  Fisher-Yates shuffle algorithm from the following link
@@ -162,33 +307,100 @@ const shuffle = (array) => {
   }
 }
 const shuffleLetters = () => {
+  console.log('shuffleLetters Mode: ', mode)
+
+  gameLetters = []
+  gameImages = []
   arabicAlphabit.forEach((lettersDataObj) => {
-    gameLetters.push(lettersDataObj.letter)
-    if (gameLetters) shuffle(gameLetters)
+    switch (mode) {
+      case '1':
+        console.log('Switch Case Mode: ', mode)
+        gameLetters.push(lettersDataObj.letter)
+        if (gameLetters) shuffle(gameLetters)
+        break
+      case '2':
+        gameImages.push(lettersDataObj.imageUrl)
+        if (gameImages) shuffle(gameImages)
+        break
+      case '3':
+        gameImages.push({
+          imgUrl: lettersDataObj.imageUrl,
+          letter: lettersDataObj.letter
+        })
+        if (gameImages) shuffle(gameImages)
+        break
+    }
   })
 
-  //console.log(gameLetters)
+  console.log(gameImages)
 }
 const drawCards = () => {
-  //console.log('------------------', gameLetters)
-
+  if (cards) cards = []
   for (let i = 0; i < numberOfCards; i++) {
-    gameLetters.forEach((letter, index) => {
-      // console.log(i)
-      if (i === index) {
-        let letterDiv = document.createElement('div')
-        letterDiv.innerHTML = letter
-        letterDiv.id = i
-        letterDiv.classList.add('card', 'flipped')
-        container.appendChild(letterDiv)
-        cards.push(letterDiv)
-      }
+    if (mode === '1') {
+      console.log('------------------', gameImages)
+      gameLetters.forEach((letter, index) => {
+        if (i === index) {
+          let letterDiv = document.createElement('div')
+          letterDiv.innerHTML = letter
+          letterDiv.id = i
+          letterDiv.classList.add('card', 'flipped')
+          container.appendChild(letterDiv)
+          cards.push(letterDiv)
+        }
+        //`<div class="card flipped" id="${i + 1}">${letter}</div>`
+      })
+    } else if (mode === '2') {
+      // console.log('img array')
 
-      //`<div class="card flipped" id="${i + 1}">${letter}</div>`
-    })
+      gameImages.forEach((imageUrl, index) => {
+        if (i === index) {
+          let letterDiv = document.createElement('div')
+          let letterImg = document.createElement('img')
+          letterImg.setAttribute('src', imageUrl)
+          letterImg.setAttribute('class', 'cardImage')
+          letterDiv.appendChild(letterImg)
+          letterDiv.id = i
+          letterDiv.classList.add('card', 'flipped')
+          letterDiv.style.background = '#ffffff'
+          container.appendChild(letterDiv)
+          cards.push(letterDiv)
+        }
+
+        //`<div class="card flipped" id="${i + 1}">${letter}</div>`
+      })
+    } else if (mode === '3') {
+      // console.log('img array')
+
+      gameImages.forEach((obj, index) => {
+        if (i === index) {
+          let letterDiv = document.createElement('div')
+          let letterImg = document.createElement('img')
+          let letterLabel = document.createElement('label')
+          letterLabel.innerHTML = obj.letter
+          letterLabel.setAttribute('class', 'smallLetter')
+          letterImg.setAttribute('src', obj.imgUrl)
+          letterImg.setAttribute('class', 'cardImage')
+          letterDiv.appendChild(letterImg)
+          letterDiv.appendChild(letterLabel)
+          letterDiv.id = i
+          letterDiv.classList.add('card', 'flipped')
+          container.appendChild(letterDiv)
+          cards.push(letterDiv)
+        }
+
+        //`<div class="card flipped" id="${i + 1}">${letter}</div>`
+      })
+    }
   }
+  addCardClick()
 }
 const initiate = () => {
+  numberOfCards = 0
+  numberOfMatches = 0
+
+  modeLabel.innerText = 'Mode: ' + mode
+  //console.log(modeLabel)
   checkLevel()
   shuffleLetters()
   drawCards()
@@ -220,16 +432,17 @@ const showBtnById = (id) => {
   
 
 */
-const flipCardsOnFront = (event) => {
+function flipCardsOnFront(event) {
   //console.log(cards[0])
   cards.forEach((card) => {
     if (event.target.id === card.id) {
-      if (card.innerHTML) return
+      if (card.innerHTML || noClick) return
       //console.log(cardText)
       for (let i = 0; i < cardsText.length; i++) {
         if (cardsText[i].cardId === event.target.id) {
           card.innerHTML = cardsText[i].cardText
           card.style.background = 'yellow'
+          noClick = true
           checkMatch(card)
         }
       }
@@ -237,6 +450,7 @@ const flipCardsOnFront = (event) => {
     //if (matchMessage.innerHTML === 'Try Again!') flipCardOnBack(card)
   })
 }
+
 /*
 Function checkMatch takes the card clicked and do as follows:
 1. Check if there is another card open already, if not it stores the card clicked in the firstCardClicked global variable 
@@ -246,17 +460,33 @@ Function checkMatch takes the card clicked and do as follows:
 */
 const checkMatch = (card) => {
   if (!firstCardClicked) {
+    noClick = false
     firstCardClicked = card
   } else {
+    noClick = true
     if (firstCardClicked.innerHTML === card.innerHTML) {
+      //console.log('firstCardClicked: ', firstCardClicked.innerHTML)
+      // console.log('Second Card Clicked: ', card.innerHTML)
       matchMessage.innerHTML = 'Its a Match!'
+      numberOfMatches++
       card.style.background = 'green'
       firstCardClicked.style.background = 'green'
       firstCardClicked = ''
+      noClick = false
     } else {
       matchMessage.innerHTML = 'Try Again!'
       flipCardOnBack(card)
     }
+    //noClick = false
+  }
+  console.log('numberOfMatches: ', numberOfMatches)
+  console.log('numberOfCards: ', numberOfCards)
+  if (numberOfCards / numberOfMatches === 2) {
+    matchMessage.innerHTML = 'Yaaaay.... Level Completed!'
+    level++
+    numberOfMatches = 0
+    hideBtnById('reset')
+    showBtnById('next')
   }
 }
 /*
@@ -277,10 +507,12 @@ const flipCardOnBack = (secondCard) => {
       firstCardClicked.style.background = 'blue'
       matchMessage.innerHTML = ''
       firstCardClicked = ''
+      noClick = false
     }
   }, 2000)
+  //noClick = true
 }
-
+//noClick = false
 /*
 * Function startGame will be called by start button to do the following:
 1. preserve the card text in the variable cardText
@@ -291,13 +523,14 @@ const flipCardOnBack = (secondCard) => {
 */
 const startGame = (event) => {
   cards.forEach((card) => {
-    console.log('hi')
+    //console.log('hi')
     cardsText.push({ cardId: card.id, cardText: card.innerHTML })
     card.innerHTML = ''
     card.classList.remove('flipped')
     card.style.background = 'blue'
     hideBtnById('start')
     showBtnById('reset')
+    noClick = false
     message.innerHTML = 'Game On!'
   })
 }
@@ -319,7 +552,7 @@ const resetCard = () => {
     for (let i = 0; i < cardsText.length; i++) {
       if (cardsText[i].cardId === card.id) {
         card.innerHTML = cardsText[i].cardText
-        card.style.background = 'green'
+        card.style.background = '#40e0d0'
         matchMessage.innerHTML = ''
       }
     }
@@ -330,11 +563,50 @@ const resetCard = () => {
   message.innerHTML = `Let's Start!`
   cardsText = []
   firstCardClicked = ''
+  noClick = false
+}
+/*
+
+*/
+const nextLevel = () => {
+  const newCards = document.querySelectorAll('.card')
+  newCards.forEach((card) => {
+    container.removeChild(card)
+  })
+  hideBtnById('next')
+  matchMessage.innerHTML = ''
+  message.innerHTML = `Let's Start!`
+  cardsText = []
+  firstCardClicked = ''
+  noClick = false
+
+  gameLetters = []
+  // level = 1
+  numberOfCards = 0
+
+  arabicAlphabit = []
+
+  numberOfMatches = 0
+  initiate()
+  showBtnById('start')
 }
 
+function addCardClick() {
+  //console.log('Clicked')
+  cards.forEach((card) => {
+    //
+
+    card.addEventListener('click', flipCardsOnFront)
+  })
+}
 /*----------------------------- Event Listeners -----------------------------*/
 startBtn.addEventListener('click', startGame)
 resetBtn.addEventListener('click', resetCard)
-cards.forEach((card) => {
-  card.addEventListener('click', flipCardsOnFront)
+addCardClick()
+nextBtn.addEventListener('click', nextLevel)
+gameMode.addEventListener('change', () => {
+  mode = gameMode.value
+  sessionStorage.setItem('mode', mode)
+  sessionStorage.setItem('level', level)
+  location.reload()
 })
